@@ -88,6 +88,10 @@
         <artifactId>commons-beanutils</artifactId>
         <version>1.9.4</version>
     </dependency>
-
+    <!--thymeleaf模块依赖-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
 </dependencies>
 </project>

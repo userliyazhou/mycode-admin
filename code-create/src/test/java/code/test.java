@@ -2,6 +2,7 @@ package code;
 
 import cn.hutool.core.lang.Validator;
 import com.CodeApplication;
+import com.code.module.file.dto.FileDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.StringUtils;
