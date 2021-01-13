@@ -5,9 +5,9 @@ import com.code.common.dto.MysqlConnectDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class CreateConnectUtils {
+public class ConnectUtils {
 
-    public Connection getMysqlConnection(MysqlConnectDTO mysqlConnectDTO) throws Exception {
+    public static  Connection getMysqlConnection(MysqlConnectDTO mysqlConnectDTO) throws Exception {
         String url =mysqlConnectDTO.getUrl();
         String username=mysqlConnectDTO.getUsername();
         String password=mysqlConnectDTO.getPassword();

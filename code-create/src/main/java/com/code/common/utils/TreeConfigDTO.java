@@ -1,4 +1,4 @@
-package com.code.common.createtree;
+package com.code.common.utils;
 
 import lombok.Data;
 

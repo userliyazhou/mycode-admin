@@ -1,4 +1,4 @@
-package com.code.common.createtree;
+package com.code.common.utils;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.collections.CollectionUtils;
@@ -111,59 +111,6 @@ public class TreeBuilderUtils<T> {
 
 
 
-    public static void main(String[] a) throws Exception {
-        TreeConfigDTO treeConfigDTO = new TreeConfigDTO("id", "parentId", "children", "0");
-        demo1 demo1 = new demo1();
-        demo1.setId("22");
-        demo1.setParentId("0");
-        demo1.setName("张三");
-        demo1.setAge("90");
-
-        demo1 demo2 = new demo1();
-        demo2.setId("33");
-        demo2.setParentId("22");
-        demo2.setName("李四");
-        demo2.setAge("91");
-
-        demo1 demo3 = new demo1();
-        demo3.setId("44");
-        demo3.setParentId("33");
-        demo3.setName("王二");
-        demo3.setAge("93");
-
-        demo1 demo4 = new demo1();
-        demo4.setId("55");
-        demo4.setParentId("44");
-        demo4.setName("麻子");
-        demo4.setAge("94");
-
-        demo1 demo5 = new demo1();
-        demo5.setId("66");
-        demo5.setParentId("0");
-        demo5.setName("第二组张三");
-        demo5.setAge("95");
-
-        demo1 demo6 = new demo1();
-        demo6.setId("77");
-        demo6.setParentId("66");
-        demo6.setName("第二组张三");
-        demo6.setAge("95");
-
-        demo1 demo7 = new demo1();
-        demo7.setId("88");
-        demo7.setParentId("77");
-        demo7.setName("第二组李四");
-        demo7.setAge("96");
-        List<demo1> demoList = new ArrayList<>();
-        demoList.add(demo1);
-        demoList.add(demo2);
-        demoList.add(demo3);
-        demoList.add(demo4);
-        demoList.add(demo5);
-        demoList.add(demo6);
-        demoList.add(demo7);
-        List<outdemo> outdemos = new TreeBuilderUtils<outdemo>().generateTree(outdemo.class, demoList, treeConfigDTO);
-    }
 
     public static List<Map<String, Object>> getObjectToMap(List<?> objList) throws IllegalAccessException {
         List<Map<String, Object>> sourceList = new ArrayList<>();
