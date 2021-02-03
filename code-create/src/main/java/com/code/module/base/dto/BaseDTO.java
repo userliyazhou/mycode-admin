@@ -1,4 +1,4 @@
-package com.code.common.dto;
+package com.code.module.base.dto;
 
 import java.io.Serializable;
 

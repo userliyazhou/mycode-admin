@@ -1,6 +1,6 @@
-package com.code.common.utils;
+package com.code.module.base.utils;
 
-import com.code.common.dto.MysqlConnectDTO;
+import com.code.module.base.dto.MysqlConnectDTO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

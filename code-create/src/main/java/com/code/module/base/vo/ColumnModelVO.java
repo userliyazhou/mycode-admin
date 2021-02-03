@@ -1,4 +1,4 @@
-package com.code.common.vo;
+package com.code.module.base.vo;
 
 import lombok.Data;
 

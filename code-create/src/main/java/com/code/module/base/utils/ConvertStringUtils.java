@@ -1,4 +1,4 @@
-package com.code.common.utils;
+package com.code.module.base.utils;
 
 import cn.hutool.core.util.StrUtil;
 

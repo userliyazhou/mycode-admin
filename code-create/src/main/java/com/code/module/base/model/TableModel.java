@@ -1,4 +1,4 @@
-package com.code.common.model;
+package com.code.module.base.model;
 import lombok.Data;
 
 @Data

@@ -1,4 +1,4 @@
-package com.code.common.utils;
+package com.code.module.base.utils;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.collections.CollectionUtils;
