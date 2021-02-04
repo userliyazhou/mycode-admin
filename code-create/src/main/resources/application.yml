@@ -1,19 +1,19 @@
 server:
   port: 8082
-spring:
-  freemarker:
-    allow-request-override: false
-    cache: false
-    check-template-location: true
-    charset: UTF-8
-    content-type: text/html;charset=UTF-8
-    expose-request-attributes: false
-    expose-session-attributes: false
-    expose-spring-macro-helpers: false
-    ###模板文件以.ftl
-    suffix: .ftl
-    ###模板目录
-    template-loader-path: classpath*:com/**/*.ftl, classpath*:/templates
+#spring:
+#  freemarker:
+#    allow-request-override: false
+#    cache: false
+#    check-template-location: true
+#    charset: UTF-8
+#    content-type: text/html;charset=UTF-8
+#    expose-request-attributes: false
+#    expose-session-attributes: false
+#    expose-spring-macro-helpers: false
+#    ###模板文件以.ftl
+#    suffix: .ftl
+#    ###模板目录
+#    template-loader-path: classpath*:com/**/*.ftl
   # 配置数据源
 #  datasource:
 #    driver-class-name: com.mysql.cj.jdbc.Driver

@@ -1,11 +1,14 @@
 package code;
 
-import cn.hutool.core.lang.Validator;
 import com.CodeApplication;
 
+import com.code.utils.templates.LoadTemplateLocation;
+import freemarker.cache.ClassTemplateLoader;
+import freemarker.template.Configuration;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.StringUtils;
+
+import java.io.IOException;
 
 @SpringBootTest(classes = CodeApplication.class)
 public class test {
@@ -14,7 +17,10 @@ public class test {
         System.out.println("单员测试");
     }
     @Test
-    public void test2(){
-
+    public void test2() throws IOException {
+        Configuration configuration = new Configuration(Configuration.VERSION_2_3_30);
+        ClassTemplateLoader fileTemplateLoader = new ClassTemplateLoader(LoadTemplateLocation.class,"java");
+        configuration.setTemplateLoader(fileTemplateLoader);
+        configuration.getTemplate("demo.ftl","UTF-8");
     }
 }

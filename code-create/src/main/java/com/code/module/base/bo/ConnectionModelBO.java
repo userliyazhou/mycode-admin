@@ -1,9 +1,10 @@
-package com.code.module.base.dto;
+package com.code.module.base.bo;
 
+import com.code.module.base.dto.BaseDTO;
 import lombok.Data;
 
 @Data
-public class ConnectionModelDTO  extends BaseDTO {
+public class ConnectionModelBO extends BaseDTO {
     //主机
     private String host;
     //端口
