@@ -2,6 +2,6 @@ package com.code.module.base.vo;
 
 import java.io.Serializable;
 
-public abstract class BaseVO  implements Serializable {
+public abstract class BaseVO implements Serializable {
     protected static final long serialVersionUID = 1L;
 }

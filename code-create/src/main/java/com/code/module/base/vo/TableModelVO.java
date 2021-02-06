@@ -1,4 +1,5 @@
 package com.code.module.base.vo;
+
 import lombok.Data;
 
 @Data

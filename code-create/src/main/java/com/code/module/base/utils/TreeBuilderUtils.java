@@ -27,13 +27,13 @@ public class TreeBuilderUtils<T> {
         String parentIdKey = treeConfigDTO.getParentIdKey();
         for (Map<String, Object> map : sourceList) {
             if (map.get(parentIdKey) == null || String.valueOf(map.get(parentIdKey)).equals("null")) {
-                throw new Exception("parentId不能为null ,id"+map.get(idKey).toString());
+                throw new Exception("parentId不能为null ,id" + map.get(idKey).toString());
             }
-            if(map.get(idKey).toString().equals(map.get(parentIdKey).toString())){
-                throw new Exception("id不能和parentId相同,id"+map.get(idKey).toString());
+            if (map.get(idKey).toString().equals(map.get(parentIdKey).toString())) {
+                throw new Exception("id不能和parentId相同,id" + map.get(idKey).toString());
             }
             if (String.valueOf(map.get(parentIdKey)).equals(rootValue)) {
-                String parentId=map.get(idKey).toString();
+                String parentId = map.get(idKey).toString();
                 T targetPojo = (T) target.newInstance(); // 创建目标pojo实例
                 Set<String> mapKeys = map.keySet();
                 for (String mapKey : mapKeys) {
@@ -51,7 +51,7 @@ public class TreeBuilderUtils<T> {
                     }
                 }
                 //封装子节点
-                generateChildrenNode(target,parentId,targetPojo,fields,treeConfigDTO,sourceList);
+                generateChildrenNode(target, parentId, targetPojo, fields, treeConfigDTO, sourceList);
                 outputList.add(targetPojo);
             }
 
@@ -60,19 +60,19 @@ public class TreeBuilderUtils<T> {
     }
 
     //封装子节点
-    void generateChildrenNode(Class target,String id,T parentPojo, Field[] fields, TreeConfigDTO treeConfigDTO,List<Map<String, Object>> sourceList) throws IllegalAccessException, InstantiationException {
+    void generateChildrenNode(Class target, String id, T parentPojo, Field[] fields, TreeConfigDTO treeConfigDTO, List<Map<String, Object>> sourceList) throws IllegalAccessException, InstantiationException {
         //上一级节点的id是下一个节点的parent，下一级节点的数据放到上一级的children属性list中
         String idKey = treeConfigDTO.getIdKey();
         String parentIdKey = treeConfigDTO.getParentIdKey();
         String childrenKey = treeConfigDTO.getChildrenKey();
         List<T> childrenList = new ArrayList<>();
-        if(StringUtils.isEmpty(id)){
+        if (StringUtils.isEmpty(id)) {
             return;
         }
         for (Map<String, Object> map : sourceList) {
             if (String.valueOf(map.get(parentIdKey)).equals(id)) {
                 T targetPojo = (T) target.newInstance(); // 创建目标pojo实例
-                String parentId=map.get(idKey).toString();
+                String parentId = map.get(idKey).toString();
                 Set<String> mapKeys = map.keySet();
                 for (String mapKey : mapKeys) {
                     Object mapValue = map.get(mapKey);//属性值
@@ -88,12 +88,12 @@ public class TreeBuilderUtils<T> {
                         }
                     }
                 }
-                generateChildrenNode(target,parentId,targetPojo,fields,treeConfigDTO,sourceList);
+                generateChildrenNode(target, parentId, targetPojo, fields, treeConfigDTO, sourceList);
                 childrenList.add(targetPojo);
             }
 
         }
-        if(CollectionUtils.isNotEmpty(childrenList)){
+        if (CollectionUtils.isNotEmpty(childrenList)) {
             for (int pojoNum = 0; pojoNum < fields.length; pojoNum++) {
                 //取出pojo属性key
                 Field pojoField = fields[pojoNum];
@@ -106,10 +106,7 @@ public class TreeBuilderUtils<T> {
                 }
             }
         }
-        }
-
-
-
+    }
 
 
     public static List<Map<String, Object>> getObjectToMap(List<?> objList) throws IllegalAccessException {

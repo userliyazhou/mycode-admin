@@ -18,7 +18,7 @@ public class ConnectionModelBO extends BaseDTO {
     //数据库引擎
     private String engine;
     //username
-    private  String username;
+    private String username;
     //password
-    private String  password;
+    private String password;
 }

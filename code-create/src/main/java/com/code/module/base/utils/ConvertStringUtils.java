@@ -23,6 +23,7 @@ public class ConvertStringUtils {
         }
         return builder.toString();
     }
+
     //转换成小驼峰命名格式
     public static String convertSmallHump(String input) {
         if (StrUtil.isEmpty(input)) {
@@ -32,7 +33,7 @@ public class ConvertStringUtils {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < inputArray.length; i++) {
             String str = inputArray[i];
-            if(i==0){
+            if (i == 0) {
                 String sb = str.toLowerCase();
                 builder.append(sb);
                 continue;
@@ -48,28 +49,30 @@ public class ConvertStringUtils {
         }
         return builder.toString();
     }
+
     public static String charToBigString(char ch) {
         String sch = String.valueOf(ch).toUpperCase();
         return sch;
     }
+
     //驼峰命名转化成下划线命名
-    public static  String  humpToUnderline(String input){
-        if(StrUtil.isEmpty(input)){
+    public static String humpToUnderline(String input) {
+        if (StrUtil.isEmpty(input)) {
             return null;
         }
         char[] chars = input.toCharArray();
         StringBuilder builder = new StringBuilder();
-        for(int i=0;i<chars.length;i++){
+        for (int i = 0; i < chars.length; i++) {
 
             char aChar = chars[i];
-            if(Character.isUpperCase(aChar)){
-                if(i==0){
+            if (Character.isUpperCase(aChar)) {
+                if (i == 0) {
                     builder.append(aChar);
                     continue;
                 }
                 builder.append("_");
                 builder.append(aChar);
-            }else {
+            } else {
                 builder.append(aChar);
             }
         }

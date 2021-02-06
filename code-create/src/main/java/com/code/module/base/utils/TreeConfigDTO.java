@@ -3,6 +3,7 @@ package com.code.module.base.utils;
 import lombok.Data;
 
 import java.io.Serializable;
+
 @Data
 public class TreeConfigDTO implements Serializable {
     protected static final long serialVersionUID = 1L;
